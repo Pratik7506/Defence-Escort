@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DefenceEscortMain">
         <activity
+            android:name=".EligibilityCriteria"
+            android:exported="true" />
+        <activity
             android:name=".NavyNCC"
             android:exported="true" />
         <activity
