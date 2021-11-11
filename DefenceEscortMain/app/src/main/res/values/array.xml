@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="qualification_array">
+        <item>12th Pass</item>
+        <item>Graduate</item>
+        <item>Engineering // BTech // B.E</item>
+        <item>MSC CS//IT</item>
+    </string-array>
+
+    <string-array name="force_array">
+        <item>Indian Army</item>
+        <item>Indian AirForce</item>
+        <item>Indian Navy</item>
+        <item>Paramilitary</item>
+    </string-array>
+</resources>
