@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "9646538466",
+    "project_id": "defence-escort",
+    "storage_bucket": "defence-escort.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9646538466:android:aa0ef8279602104b8c28bb",
+        "android_client_info": {
+          "package_name": "com.example.defenceescort"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9646538466-5pktlvpdrqq1tamj3f8caagrvojrlmbi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp7hymrvNTYwaHhslAnP5YJFCbBHYB9k8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9646538466-5pktlvpdrqq1tamj3f8caagrvojrlmbi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9646538466:android:58f2db60caf48d5f8c28bb",
+        "android_client_info": {
+          "package_name": "com.example.defenceescortmain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9646538466-5pktlvpdrqq1tamj3f8caagrvojrlmbi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp7hymrvNTYwaHhslAnP5YJFCbBHYB9k8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9646538466-5pktlvpdrqq1tamj3f8caagrvojrlmbi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

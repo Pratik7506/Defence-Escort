@@ -113,35 +113,59 @@ public class EligibilityCriteria extends AppCompatActivity {
 
     // age values correct kar lena or toast me sahi value daal dena
 
-    public void showResult(String qualification, float age, int force){
+    public void showResult(String qualification, float age, int force) {
 
 
-        switch (force){
+        switch (force) {
             case 0:
-                if (qualification.equals("12th Pass") && age > 16.5 && age < 19.5 ){
-                    Toast.makeText(EligibilityCriteria.this,"You can go for NDA", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(EligibilityCriteria.this,"You are not eligible for anything jaa soja", Toast.LENGTH_SHORT).show();
+                if (qualification.equals("12th Pass") && age > 16.5 && age < 19.5) {
+                    Toast.makeText(EligibilityCriteria.this, "You are Eligible for both NDA and TES Entry Exam", Toast.LENGTH_SHORT).show();
+                } else if (qualification.equals("Graduate") && age > 19 && age < 25) {
+                    Toast.makeText(EligibilityCriteria.this, "You are Eligible for both UPSC CDS and NCC SPECIAL ENTRY Exam", Toast.LENGTH_SHORT).show();
+                } else if (qualification.equals("Engineering // BTech // B.E") && age > 20 && age < 27) {
+                    Toast.makeText(EligibilityCriteria.this, "You are Eligible for SSC TECH Exam", Toast.LENGTH_SHORT).show();
+                } else if (qualification.equals("MSC CS//IT") && age > 20 && age < 27) {
+                    Toast.makeText(EligibilityCriteria.this, "You are Eligible for SSC TECH Exam", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(EligibilityCriteria.this, "You are not eligible for any of the Exams", Toast.LENGTH_SHORT).show();
                 }
                 break;
+
             case 1:
-                Toast.makeText(EligibilityCriteria.this,"Indian Air force", Toast.LENGTH_SHORT).show();
+                if (qualification.equals("12th Pass") && age > 16.5 && age < 21) {
+                    Toast.makeText(EligibilityCriteria.this, "You are Eligible for both NDA and XY Group Exams", Toast.LENGTH_SHORT).show();
+                } else if (qualification.equals("Graduate") && age > 20 && age < 24) {
+                    Toast.makeText(EligibilityCriteria.this, "You are Eligible for AFCAT, UPSC CDS and NCC SPECIAL SPECIAL ENTRY Exams", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(EligibilityCriteria.this, "You are not eligible for any of the Exams", Toast.LENGTH_SHORT).show();
+                }
+                break;
 
             case 2:
-                if (qualification.equals("Engineering // BTech // B.E") && age > 19 && age < 24 ){
-                    Toast.makeText(EligibilityCriteria.this,"You can go for INET", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(EligibilityCriteria.this,"You are not eligible for anything jaa soja", Toast.LENGTH_SHORT).show();
+                if (qualification.equals("Engineering // BTech // B.E") && age > 19 && age < 24) {
+                    Toast.makeText(EligibilityCriteria.this, "You are eligible for INET Exam", Toast.LENGTH_SHORT).show();
+                } else if (qualification.equals("Graduate")) {
+                    if (age > 19 && age < 22 ){
+                        Toast.makeText(EligibilityCriteria.this, "You are Eligible for UPSC CDS", Toast.LENGTH_SHORT).show();
+                    }
+                    if (age > 19 && age < 25){
+                        Toast.makeText(EligibilityCriteria.this, "You are Eligible for NCC SPECIAL ENTRY Exams", Toast.LENGTH_SHORT).show();
+                    }
+                } else if (qualification.equals("12th Pass")){
+                    if ( age > 16.5 && age < 19.5){
+                        Toast.makeText(EligibilityCriteria.this, "You are Eligible for NDA Exam", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    Toast.makeText(EligibilityCriteria.this, "You are not eligible for any of the exams", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            default:
-                Toast.makeText(EligibilityCriteria.this,"You are not eligible for anything jaa soja", Toast.LENGTH_SHORT).show();
-                break;
 
-
+            case 3:
+                if (qualification.equals("Graduate") && age > 20 && age < 25) {
+                    Toast.makeText(EligibilityCriteria.this, "You are eligible for CAPF Exam", Toast.LENGTH_SHORT).show();
+                }
 
         }
-
-
     }
 }
