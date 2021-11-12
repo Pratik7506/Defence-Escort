@@ -1,10 +1,13 @@
 package com.example.defenceescortmain;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,14 +19,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class HomePage extends AppCompatActivity {
 
-    private FirebaseAuth firebaseAuth;
-
     TextView IndianArmy, IndianAF, IndianNavy, Paramilitary;
 
-
-
-
-
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,23 +30,13 @@ public class HomePage extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        getSupportActionBar().hide();
-
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+
         if(currentUser != null){
             getSupportActionBar().show();
+        }else{
+            getSupportActionBar().hide();
         }
-
-
-
-
-
-
-
-
-
-
-
 
         IndianArmy= findViewById(R.id.TVArmy);
         IndianAF= findViewById(R.id.TVAF);
@@ -88,7 +76,6 @@ public class HomePage extends AppCompatActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -104,14 +91,50 @@ public class HomePage extends AppCompatActivity {
                 startActivity(new Intent(HomePage.this, EligibilityCriteria.class));
                 break;
 
-            case R.id.aboutus:b:
+            case R.id.aboutus:
 //                startActivity(new Intent(HomePage.this, SettingsActivity.class));
-                break;
+            break;
+
+            case R.id.logout:
+                signOut();
+
+            break;
 
         }
 
         return true;
     }
+
+    // sign out function
+    public void signOut() {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(HomePage.this);
+        builder1.setMessage("Do you really want to sign out");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        firebaseAuth.signOut();
+                        startActivity(new Intent(HomePage.this, LoginPage.class));
+                        finish();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
+    }
+
 
 
 }
